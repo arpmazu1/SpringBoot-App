@@ -1,9 +1,14 @@
 package com.stackroute.muzixapp.config;
 
+import com.stackroute.muzixapp.domain.Track;
+import com.stackroute.muzixapp.service.TrackService;
 import org.h2.server.web.WebServlet;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.ContextStartedEvent;
+import org.springframework.context.event.EventListener;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -44,5 +49,10 @@ public class WebConfiguration {
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
                 .version("1.0.0")
                 .build();
+    }
+
+    @EventListener
+    public void handleContextRefreshEvent(ContextRefreshedEvent ctxStartEvt) {
+        System.out.println("Context Start Event received.");
     }
 }
