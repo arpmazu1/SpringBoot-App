@@ -21,7 +21,7 @@ public class TrackServiceImpl implements TrackService {
         this.trackRepository = trackRepository;
     }
 
-    //implement all the methods
+    //implementing all the methods
     @Override
     public Track saveTrack(Track track) {
         Track savedTrack = trackRepository.save(track);
@@ -46,6 +46,11 @@ public class TrackServiceImpl implements TrackService {
     public Track updateTrack(Track track) {
         Track updateTrack = trackRepository.save(track);
         return updateTrack;
+    }
+
+    @Override
+    public Track getTrackByName(String name){
+        return trackRepository.findTrackByName(name);
     }
 }
 

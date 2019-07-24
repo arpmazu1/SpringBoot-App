@@ -4,18 +4,18 @@ import com.stackroute.muzixapp.domain.Track;
 
 import java.util.List;
 
-//track service interface
+// trackservice interface
 public interface TrackService {
 
-    //methods
     Track saveTrack(Track track);
 
     void deleteTrack(int id);
 
     List<Track> getAllTracks();
 
-
     Track updateTrack(Track track);
+
+    Track getTrackByName(String name);
 
 
 }
