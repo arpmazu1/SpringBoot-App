@@ -51,6 +51,7 @@ public class WebConfiguration {
                 .build();
     }
 
+    //using eventlistner for ApplicationListener
     @EventListener
     public void handleContextRefreshEvent(ContextRefreshedEvent ctxStartEvt) {
         System.out.println("Context Start Event received.");
