@@ -36,11 +36,12 @@ public class TrackServiceImpl implements TrackService {
         if (trackRepository.existsById(track.getId())) {
             throw new TrackAlreadyExistsException("Track already exists");
         }
-        Track savedTrack = trackRepository.save(track);
-        if(savedTrack == null)
-        {
-            throw new TrackAlreadyExistsException("Track already exists");
-        }
+        try{
+        Track savedTrack = trackRepository.save(track);}
+         catch (IOException e) {
+            e.printStackTrace();
+        } 
+        
         return savedTrack;
     }
 
