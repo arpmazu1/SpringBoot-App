@@ -13,7 +13,7 @@ public interface TrackService {
 
     Track saveTrack(Track track) throws TrackAlreadyExistsException;
 
-    void deleteTrack(int id);
+    Track deleteTrack(int id);
 
     List<Track> getAllTracks();
 
