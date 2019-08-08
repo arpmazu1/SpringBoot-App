@@ -9,11 +9,10 @@ public interface TrackService {
 
     //methods
     Track saveTrack(Track track);
-
+    
     Track deleteTrack(int id);
-
+    
     List<Track> getAllTracks();
-
 
     Track updateTrack(Track track);
 
